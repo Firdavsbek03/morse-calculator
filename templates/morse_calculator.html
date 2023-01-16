@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Calculator</title>
+</head>
+<style>
+    h3,h1,span{
+    color:#00337C;
+    }
+</style>
+<body>
+<h1>Morse Calculator</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter your string here..." name="user_string" value="{{value}}">
+    <input type="submit" value="Calculate">
+</form>
+{% if calculated_morse %}
+<h3 >Value: <span style="font-size:32px">{{calculated_morse}}</span></h3>
+{% endif %}
+</body>
+</html>
